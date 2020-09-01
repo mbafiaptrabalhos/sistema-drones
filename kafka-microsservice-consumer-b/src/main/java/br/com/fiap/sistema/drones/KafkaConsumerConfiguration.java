@@ -24,7 +24,7 @@ public class KafkaConsumerConfiguration {
 	@Value("${kafka.consumer.group-id}")
 	private String consumerGroup;
 
-	Map<String, Object> consumerConfigs() {
+	private Map<String, Object> consumerConfigs() {
 		Map<String, Object> props = new HashMap<>();
 		props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, server);
 		props.put(ConsumerConfig.GROUP_ID_CONFIG, consumerGroup);
@@ -33,7 +33,7 @@ public class KafkaConsumerConfiguration {
 		return props;
 	}
 
-	ConsumerFactory<String, String> consumerFactory() {
+	private ConsumerFactory<String, String> consumerFactory() {
 		return new DefaultKafkaConsumerFactory<>(consumerConfigs());
 	}
 

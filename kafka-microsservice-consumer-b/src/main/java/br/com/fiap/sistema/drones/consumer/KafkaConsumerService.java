@@ -14,6 +14,7 @@ public class KafkaConsumerService {
 	@Autowired
 	private DroneInfoService service;
 
+	
 	@KafkaListener(topics = "${kafka.drone.info.topic}", containerFactory = "kafkaJsonListenerContainerFactory")
 	public void listener(@Payload DroneInfo info) {
 		System.out.println("Mensagem recebida: " + info);

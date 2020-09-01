@@ -64,8 +64,8 @@ public class DroneInfo {
 
 	@Override
 	public String toString() {
-		return "Drone (latitude: " + latitude + ", longitude: " + longitude + ", temperatura: " + temperatura
-				+ ", umidade: " + umidade + ", email: " + email + ")";
+		return "Drone (id: " + id + ", latitude: " + latitude + ", longitude: " + longitude + ", temperatura: "
+				+ temperatura + ", umidade: " + umidade + ", email: " + email + ")";
 	}
 
 }
