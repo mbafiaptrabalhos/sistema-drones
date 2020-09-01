@@ -1,4 +1,4 @@
-package br.com.fiap.sistema.drones;
+package br.com.fiap.sistema.drones.configuration;
 
 import java.util.HashMap;
 import java.util.Map;
