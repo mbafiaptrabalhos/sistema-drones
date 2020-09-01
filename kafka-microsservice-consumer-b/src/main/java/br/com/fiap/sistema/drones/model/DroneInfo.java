@@ -7,50 +7,50 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class DroneInfo {
 
 	@Id
-	private Long id;
-	private Double latitude;
-	private Double longitude;
-	private Integer temperatura;
-	private Integer umidade;
+	private String id;
+	private String latitude;
+	private String longitude;
+	private String temperatura;
+	private String umidade;
 	private String email;
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public Double getLatitude() {
+	public String getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitude(Double latitude) {
+	public void setLatitude(String latitude) {
 		this.latitude = latitude;
 	}
 
-	public Double getLongitude() {
+	public String getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(Double longitude) {
+	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
 
-	public Integer getTemperatura() {
+	public String getTemperatura() {
 		return temperatura;
 	}
 
-	public void setTemperatura(Integer temperatura) {
+	public void setTemperatura(String temperatura) {
 		this.temperatura = temperatura;
 	}
 
-	public Integer getUmidade() {
+	public String getUmidade() {
 		return umidade;
 	}
 
-	public void setUmidade(Integer umidade) {
+	public void setUmidade(String umidade) {
 		this.umidade = umidade;
 	}
 
@@ -60,6 +60,12 @@ public class DroneInfo {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "Drone (latitude: " + latitude + ", longitude: " + longitude + ", temperatura: " + temperatura
+				+ ", umidade: " + umidade + ", email: " + email + ")";
 	}
 
 }

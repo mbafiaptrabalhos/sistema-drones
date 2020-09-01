@@ -3,11 +3,13 @@ package br.com.fiap.sistema.drones.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.fiap.sistema.drones.exception.DroneNaoEncontradoException;
 import br.com.fiap.sistema.drones.model.DroneInfo;
 import br.com.fiap.sistema.drones.repository.DroneInfoRepository;
 
+@Service
 public class DroneInfoService {
 
 	@Autowired
@@ -21,7 +23,7 @@ public class DroneInfoService {
 		return repository.save(drone);
 	}
 
-	public void delete(Long id) {
+	public void delete(String id) {
 		if (repository.findById(id).isPresent()) {
 			repository.delete(repository.findById(id).get());
 		} else {
@@ -29,7 +31,7 @@ public class DroneInfoService {
 		}
 	}
 
-	public DroneInfo getById(Long id) {
+	public DroneInfo getById(String id) {
 		if (repository.findById(id).isPresent()) {
 			return repository.findById(id).get();
 		} else {
