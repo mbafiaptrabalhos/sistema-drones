@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ExceptionAdvice {
 
 	@ExceptionHandler(value = DroneNaoEncontradoException.class)
-	public ResponseEntity<Void> handleGenericNotFoundException(DroneNaoEncontradoException e) {
-		return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+	public ResponseEntity<Void> handleGenericNotFoundException() {
+		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
 	}
 }

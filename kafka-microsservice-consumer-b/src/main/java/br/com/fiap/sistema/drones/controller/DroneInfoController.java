@@ -17,17 +17,17 @@ import br.com.fiap.sistema.drones.service.DroneInfoService;
 @RequestMapping("drones")
 public class DroneInfoController {
 
-	@Autowired
-	private DroneInfoService service;
+    @Autowired
+    private DroneInfoService service;
 
-	@GetMapping
-	public ResponseEntity<List<DroneInfo>> getAllDrones() {
-		return new ResponseEntity<>(service.getAllDrones(), HttpStatus.OK);
-	}
+    @GetMapping
+    public ResponseEntity<List<DroneInfo>> getAllDrones() {
+        return new ResponseEntity<>(service.getAllDrones(), HttpStatus.OK);
+    }
 
-	@GetMapping("/{id}")
-	public ResponseEntity<DroneInfo> getById(@PathVariable String id) {
-		return new ResponseEntity<>(service.getById(id), HttpStatus.OK);
-	}
+    @GetMapping("/{id}")
+    public ResponseEntity<DroneInfo> getById(@PathVariable final String id) {
+        return new ResponseEntity<>(service.getById(id), HttpStatus.OK);
+    }
 
 }

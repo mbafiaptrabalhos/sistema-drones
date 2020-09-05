@@ -8,8 +8,8 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories
 public class KafkaMicrosserviceConsumerBApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(KafkaMicrosserviceConsumerBApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(KafkaMicrosserviceConsumerBApplication.class, args);
+    }
 
 }
