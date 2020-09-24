@@ -17,6 +17,11 @@ body, html, .containerDrone, .row{
       padding-top: 15px;
   }
   
+  a{
+	  color: white;
+  }
+  
+  
   .bloco1 .sidebar-wrapper,
   body>.navbar-collapse .sidebar-wrapper {
       position: relative;
@@ -24,13 +29,13 @@ body, html, .containerDrone, .row{
   }
   
   .bloco1 .nav li:hover .nav-link,
-  body>.navbar-collapse .nav li:hover .nav-link {
+  body>.navbar-collapse .nav li:hover .nav-link, a:hover {
       color: #ed145b;
   }
   
   .bloco1 .nav .nav-link,
   body>.navbar-collapse .nav .nav-link {
-      color: #616d72;
+      color: white;
   }
   
   .bloco1 .nav .nav-link,
