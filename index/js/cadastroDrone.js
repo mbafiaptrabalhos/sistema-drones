@@ -5,4 +5,3 @@ document.getElementById("sliderTemperatura").oninput = function() {
 document.getElementById("sliderUmidade").oninput = function() {
   document.getElementById("valueUmidade").innerHTML = this.value;
 }
-

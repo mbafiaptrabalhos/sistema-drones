@@ -1,7 +1,4 @@
 @import 'bootstrap.min.css';
-@import 'pagina_mapa_drone/css/mapa.css';
-@import 'pagina_cadastro_drone/css/styleDrone.css';
-
 
 body, html, .containerDrone, .row{
     height: 100%;
@@ -118,3 +115,5 @@ body, html, .containerDrone, .row{
   body{
       overflow: hidden;
   }
+  
+  #mapid { height: 80vh; }
