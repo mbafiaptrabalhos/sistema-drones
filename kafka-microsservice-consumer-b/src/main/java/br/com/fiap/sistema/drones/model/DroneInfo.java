@@ -13,6 +13,7 @@ public class DroneInfo {
 	private String temperatura;
 	private String umidade;
 	private String email;
+	private Boolean habilitaLocalizacao;
 
 	public String getId() {
 		return id;
@@ -68,4 +69,11 @@ public class DroneInfo {
 				+ temperatura + ", umidade: " + umidade + ", email: " + email + ")";
 	}
 
+	public Boolean getHabilitaLocalizacao() {
+		return habilitaLocalizacao;
+	}
+
+	public void setHabilitaLocalizacao(Boolean habilitaLocalizacao) {
+		this.habilitaLocalizacao = habilitaLocalizacao;
+	}
 }

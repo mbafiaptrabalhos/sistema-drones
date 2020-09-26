@@ -16,9 +16,11 @@ import br.com.fiap.sistema.drones.service.DroneInfoService;
 @RestController
 @RequestMapping("drones")
 public class DroneInfoController {
+    private final DroneInfoService service;
 
-    @Autowired
-    private DroneInfoService service;
+    public DroneInfoController(DroneInfoService service) {
+        this.service = service;
+    }
 
     @GetMapping
     public ResponseEntity<List<DroneInfo>> getAllDrones() {

@@ -11,8 +11,11 @@ import br.com.fiap.sistema.drones.service.DroneInfoService;
 @Component
 public class KafkaConsumerService {
 
-	@Autowired
-	private DroneInfoService service;
+	private final DroneInfoService service;
+
+	public KafkaConsumerService(DroneInfoService service) {
+		this.service = service;
+	}
 
 	@KafkaListener(topics = "${kafka.drone.info.topic}", containerFactory = "kafkaJsonListenerContainerFactory")
 	public void listener(@Payload DroneInfo info) {

@@ -12,8 +12,11 @@ import br.com.fiap.sistema.drones.repository.DroneInfoRepository;
 @Service
 public class DroneInfoService {
 
-    @Autowired
-    private DroneInfoRepository repository;
+    private final DroneInfoRepository repository;
+
+    public DroneInfoService(DroneInfoRepository repository) {
+        this.repository = repository;
+    }
 
     public List<DroneInfo> getAllDrones() {
         return repository.findAll();
