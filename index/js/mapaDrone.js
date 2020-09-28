@@ -28,18 +28,16 @@ mapMarkers = [];
 
 
 obtemDadosDrone = function () {
-    console.log("Executando")
     var http = new XMLHttpRequest();
 
     //URL DO MICROSERVICE CONSUMIDOR B
-    var url = 'http://localhost:8080/drones';
+    var url = 'http://localhost:8081/api/drones';
 
     http.open('GET', url, true);
 
     http.onreadystatechange = function () {
         if (http.readyState == 4 && http.status == 200) {
             drones = JSON.parse(http.responseText);
-            console.log(drones);
 
             dronesMostrar = drones;
             dronesApagar = drones;
