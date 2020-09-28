@@ -35,8 +35,7 @@ public class KafkaConsumerConfig {
         deserializer.addTrustedPackages("*");
         deserializer.setUseTypeMapperForKey(true);
 
-        return new DefaultKafkaConsumerFactory<>(properties,
-                new StringDeserializer(), deserializer);
+        return new DefaultKafkaConsumerFactory<>(properties, new StringDeserializer(), deserializer);
     }
 
     @Bean
