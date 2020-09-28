@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/producer")
+@CrossOrigin(origins = "*")
 public class ProduceController {
 
     private DroneMessageProducer droneMessageProducer;
