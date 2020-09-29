@@ -1,4 +1,4 @@
-![Logo of the project](https://github.com/mbafiaptrabalhos/sistema-drones/blob/develop/index/assets/drone.svg)
+![Logo of the project](https://github.com/mbafiaptrabalhos/sistema-drones/blob/develop/index/assets/droneBranco.png)
 
 # Sistema Drone
 > Projeto criado para a disciplina de Integration and development tools [FIAP].  
