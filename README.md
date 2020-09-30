@@ -46,4 +46,6 @@ Para executar o projeto você deve.
 ## Vídeo de execução 
 
 O vídeo abaixo contém a execução dos microsserviços e o funcionamento do sistema.
+```shell
 https://youtu.be/3iSvBZwKLus
+```
