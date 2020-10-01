@@ -89,7 +89,7 @@ Acessar pasta do microservice **kafka-microsservice-consumer-a** e executar coma
 mvn spring-boot:run
 ```
 
-Acessar pasta do microservice **kafka-microsservice-consumer-a** e executar comando:
+Acessar pasta do microservice **kafka-microsservice-consumer-b** e executar comando:
 
 ```shell
 mvn spring-boot:run
