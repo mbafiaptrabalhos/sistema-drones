@@ -11,6 +11,4 @@ public interface DroneInfoDTOService {
     List<DroneInfoDTO> getAll();
 
     List<DroneInfoDTO> getAllByStatus();
-
-    void updateDroneInfoDto(DroneInfoDTO droneInfoDTO);
 }
