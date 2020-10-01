@@ -94,6 +94,8 @@ Acessar pasta do microservice **kafka-microsservice-consumer-a** e executar coma
 ```shell
 mvn spring-boot:run
 ```
+
+Abrir arquivo **index.html** para acessar página
   
 
 ## Vídeo de execução
