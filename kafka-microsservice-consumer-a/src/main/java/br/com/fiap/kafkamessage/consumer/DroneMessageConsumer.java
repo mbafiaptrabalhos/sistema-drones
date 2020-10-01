@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -27,6 +28,7 @@ public class DroneMessageConsumer {
         this.emailService = emailService;
         this.droneInfoDTOService = droneInfoDTOService;
         this.modelMapper = modelMapper;
+        this.threadEnvioEmail();
     }
 
     @KafkaListener(topics = "${kafka.topic}", containerFactory = "droneInfoKafkaListenerContainerFactory")
@@ -36,14 +38,35 @@ public class DroneMessageConsumer {
         int umidade = Integer.parseInt(droneInfo.getUmidade());
 
         if ( (temperatura >= 35 || temperatura <= 0)  || umidade <= 15 ) {
-            emailService.sendSimpleMessage(droneInfo.getEmail(), "MONITORAMENTO DRONE", droneInfo.toString());
-
             DroneInfoDTO droneInfoDTOSaved = modelMapper.map(droneInfo, DroneInfoDTO.class);
+            droneInfoDTOSaved.setStatus(false);
             droneInfoDTOService.save(droneInfoDTOSaved);
-            logger.info("email enviado");
-        } else {
-            logger.info("não há email a ser enviado");
         }
-        this.droneLatch.await(1, TimeUnit.MINUTES);
+        this.droneLatch.await(5, TimeUnit.SECONDS);
+    }
+
+    private void threadEnvioEmail() {
+        Runnable runnable = () -> {
+            while(true) {
+                List<DroneInfoDTO> listDrones = droneInfoDTOService.getAllByStatus();
+                try {
+                    if (!listDrones.isEmpty()) {
+                        for (DroneInfoDTO drone : listDrones) {
+                            emailService.sendSimpleMessage(drone.getEmail(), "MONITORAMENTO DRONE", drone.toString());
+                            logger.info("email enviado -> " + drone.getEmail());
+                            drone.setStatus(true);
+                            droneInfoDTOService.save(drone);
+                        }
+                    } else {
+                        logger.info("não há email a ser enviado");
+                    }
+                    Thread.sleep(60000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        Thread thread = new Thread(runnable);
+        thread.start();
     }
 }

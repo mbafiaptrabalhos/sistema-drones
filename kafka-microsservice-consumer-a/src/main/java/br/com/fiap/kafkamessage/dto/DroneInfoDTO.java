@@ -11,6 +11,7 @@ public class DroneInfoDTO {
     private String temperatura;
     private String umidade;
     private String email;
+    private boolean status;
 
     public Long getId() {
         return id;
@@ -42,5 +43,13 @@ public class DroneInfoDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }
