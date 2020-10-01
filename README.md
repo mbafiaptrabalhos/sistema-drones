@@ -45,7 +45,7 @@ Essas são as configurações necessárias para que possa rodar o projeto.
 
 ```shell
 
-- Java
+- Java 11
 - Docker
 - Maven
 
