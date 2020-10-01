@@ -30,9 +30,4 @@ public class DroneInfoDTOServiceImpl implements DroneInfoDTOService {
     public List<DroneInfoDTO> getAllByStatus() {
         return repository.findAllByStatusIsFalse();
     }
-
-    @Override
-    public void updateDroneInfoDto(DroneInfoDTO droneInfoDTO) {
-        repository.save(droneInfoDTO);
-    }
 }
